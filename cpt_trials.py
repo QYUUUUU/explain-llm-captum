@@ -1,11 +1,16 @@
 # import torch
-from captum.attr import ShapleyValueSampling, LLMAttribution, TextTemplateFeature, ProductBaselines
+from captum.attr import ShapleyValueSampling, LLMAttribution, TextTemplateInput, ProductBaselines
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 def setup():
-    model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
-    tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+    # model is 2gb, is this too much?
+    # takes a good bit of time to execute on my gpu, and since other people might not have access to gpu, this is not viable
+
+    # model = AutoModelForCausalLM.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+    # tokenizer = AutoTokenizer.from_pretrained("TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+    model = AutoModelForCausalLM.from_pretrained("distilbert/distilgpt2")
+    tokenizer = AutoTokenizer.from_pretrained("distilbert/distilgpt2")
     return model, tokenizer
 
 def do_stuff(model, tokenizer):
@@ -19,7 +24,7 @@ def do_stuff(model, tokenizer):
             }
         )
     llm_attr = LLMAttribution(svs, tokenizer)
-    inp = TextTemplateFeature(
+    inp = TextTemplateInput(
             "{name} lives in {city} , {state} and is a {occupation}. {pronoun} personal interests include",
             {
                 "name"      : "Dave", 
