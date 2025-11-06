@@ -13,7 +13,7 @@ Captum is a
 If you do not want to run this demo locally, you can also look at it on [google collab](https://colab.research.google.com/drive/1-T0mja-TGL2h_v4_bXKhyY_fYDd8JdEj?usp=sharing).
 Otherwise, please follow the next steps:
 
-Fist we need to install [Git](#git) to be able to clone this repository.
+<!-- Fist we need to install [Git](#git) to be able to clone this repository.
 Then decide, whether you want to set up your virtual environment with [venv](#venv) (built into Python) or [Conda](#conda) (a package and environment manager from Anaconda/Miniconda).
 
 ### Install Git
@@ -37,7 +37,7 @@ git clone https://github.com/MeinChef/explain-llm-captum
 - Change into the cloned repository:
 ```bash
 cd explain-llm-captum
-```
+``` -->
 
 ### Set Up a Virtual Environment (venv)
 <a name="venv"></a>
@@ -51,6 +51,7 @@ Download and install Python:
 python -m venv venv
 ```
 - Activate the virtual environment:
+
 --> On Windows:
 ```bash
 .\venv\Scripts\activate
@@ -59,7 +60,7 @@ python -m venv venv
 ```bash
 source venv/bin/activate
 ```
-- Install required packages
+- Install required packages (to make use of GPU acceleration, use `requirements-cuda_rocm.txt` instead of `requirements.txt`)
 ```bash
 pip install -r requirements.txt
 ```
@@ -67,30 +68,32 @@ pip install -r requirements.txt
 ### Set Up a Virtual Environment (conda)
 <a name="conda"></a>
 - Create a virtual environment:
-1. Open your terminal (Command Prompt on Windows, Terminal on macOS/Linux).
-2. Navigate to the directory where you saved the environment.yml file. (This should be YOUR_PATH/UDL-Reinforcement-Learning/)
-3. Execute the following command to create the environment:
+- Open your terminal (Command Prompt on Windows, Terminal on macOS/Linux).
+<!-- 2. Navigate to the directory where you saved the environment.yml file. (This should be YOUR_PATH/UDL-Reinforcement-Learning/) -->
+- Execute the following command to create the environment:
 
 ```bash 
-conda create -m venv -f environment.yml
+conda create -m venv python=3.14
 ```
 - Activate the virtual environment:
 --> On Windows, Unix and MacOS:
 ```bash
 conda activate venv
 ```
+- Install required packages (to make use of GPU acceleration, use `requirements-cuda_rocm.txt` instead of `requirements.txt`)
+```bash
+pip install -r requirements.txt
+```
 
 ## Structure of this Repository
 
 ```
-.
 ├── .gitignore
-├── environment.yml
 ├── main.ipynb
 ├── README.md
 ├── requirements.txt
-
+├── requirements-cuda.txt
 ```
 
 ## References
-[^1] Kokhlikyan, N., Miglani, V., Martin, M., Wang, E., Alsallakh, B., Reynolds, J., … Reblitz-Richardson, O. (2020). Captum: A unified and generic model interpretability library for PyTorch. arXiv [Cs.LG]. Retrieved from http://arxiv.org/abs/2009.07896
+[^1] Miglani, V., Yang, A., Markosyan, A. H., Garcia-Olano, D., & Kokhlikyan, N. (2023, December). Using Captum to Explain Generative Language Models [arXiv:2312.05491[cs]]. https://doi.org/10.48550/arXiv.2312.05491
