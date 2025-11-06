@@ -7,7 +7,7 @@ This repository is for the course "Explainability of LLMs" at University of Osnb
 - [References](#references)
 ---
 ## Overview
-This repository is demonstarting how to use [Captum](https://github.com/meta-pytorch/captum) [^1] for explaining Generative Language Models.
+This repository is demonstarting how to use [Captum](https://github.com/meta-pytorch/captum) [[1]] for explaining Generative Language Models.
 Captum is a 
 ## QuickStart
 If you do not want to run this demo locally, you can also look at it on [google collab](https://colab.research.google.com/drive/1-T0mja-TGL2h_v4_bXKhyY_fYDd8JdEj?usp=sharing).
@@ -96,4 +96,5 @@ pip install -r requirements.txt
 ```
 
 ## References
-[^1] Miglani, V., Yang, A., Markosyan, A. H., Garcia-Olano, D., & Kokhlikyan, N. (2023, December). Using Captum to Explain Generative Language Models [arXiv:2312.05491[cs]]. https://doi.org/10.48550/arXiv.2312.05491
+<a name="references"></a>
+[1] Miglani, V., Yang, A., Markosyan, A. H., Garcia-Olano, D., & Kokhlikyan, N. (2023, December). Using Captum to Explain Generative Language Models [arXiv:2312.05491[cs]]. https://doi.org/10.48550/arXiv.2312.05491
