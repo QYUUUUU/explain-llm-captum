@@ -39,13 +39,13 @@ def do_stuff(model, tokenizer):
 
     # make baselines more easily editable
     baselines = ProductBaselines(
-            {
-                ("name" , "pronoun"): [("Sarah", "Her"), ("John", "His")],
-                "city": ["Seattle", "Boston"],
-                "state": ["WA", "MA"],
-                "occupation": [" doctor", "engineer", "teacher", "technician", "plumber"]
-            }
-        )
+        {
+            ("name" , "pronoun"): [("Sarah", "Her"), ("John", "His")],
+            "city": ["Seattle", "Boston"],
+            "state": ["WA", "MA"],
+            "occupation": [" doctor", "engineer", "teacher", "technician", "plumber"]
+        }
+    )
     
     values = {
         "name"      : "Dave", 
@@ -57,10 +57,10 @@ def do_stuff(model, tokenizer):
     llm_attr = LLMAttribution(svs, tokenizer)
     
     inp = TextTemplateInput(
-            "{name} lives in {city}, {state} and is a {occupation}. {pronoun} personal interests include",
-            values,
-            baselines = baselines,
-        )
+        "{name} lives in {city}, {state} and is a {occupation}. {pronoun} personal interests include",
+        values,
+        baselines = baselines,
+    )
     attr_result = llm_attr.attribute(inp, target = "playing golf, hiking, and cooking.")
     # inputs = torch.tensor(tokenizer(inp.to_model_input())["input_ids"])
 
