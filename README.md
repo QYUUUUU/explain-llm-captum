@@ -10,9 +10,22 @@ This repository is for the course "Explainability of LLMs" at University of Osnb
 This repository is demonstarting how to use [Captum](https://github.com/meta-pytorch/captum) [[Miglani et al., 2023]](#references) for explaining Generative Language Models.
 Captum is a PyTorch library for model interpretability that provides tools to analyze and understand how LLMs make predictions. It allows you to attribute the output of a model to its input features, helping answer questions like “Which tokens or words in this text most influenced the model’s prediction?”
 
-Captum includes several attribution methods such as Feature Ablation, Integrated Gradients, and Shapley Value Sampling, which can be used to evaluate token-level contributions and better understand the internal reasoning of generative models.
+
+## Different Attribution Methods
+In Captum there are two main different ways of calculating Attribution.
+Perturbation based methods and Gradient based Methods.
+
+Captum includes several attribution methods such as Feature Ablation, Integrated Gradients, (both gradient-based), Shapley Value Sampling, and Kernel SHAP (both perturbation based), which can be used to evaluate token-level contributions and better understand the internal reasoning of generative models.
+
+Per default, Captum only supports perturbation based methods for LLMAttribution, as explored in `pert_captum.ipynb`. In this notebook we use the `distilgpt2` model from huggingface, to have an easy-working example of the capabilities of the Captum library.
+
+In the other Jupyter Notebook, `grad_captum.ipynb`, we created our own, feed-forward text classification model. Its architecture allows for gradient based methods to be evaluated. We also provided a pre-trained model (`bow_text_classifier.pt`), so that you don't have to do the training.
+
+---
 ## QuickStart
-If you do not want to run this demo locally, you can also look at it on [google collab](https://colab.research.google.com/drive/1-T0mja-TGL2h_v4_bXKhyY_fYDd8JdEj?usp=sharing).
+If you do not want to run this demo locally, you can also look at it on Google Colab:
+- [Perturbation-Based](https://colab.research.google.com/drive/1-T0mja-TGL2h_v4_bXKhyY_fYDd8JdEj?usp=sharing).
+- [Gradient-Based]   (not yet uploaded)
 Otherwise, please follow the next steps:
 
 <!-- Fist we need to install [Git](#git) to be able to clone this repository.
@@ -91,7 +104,8 @@ pip install -r requirements.txt
 
 ```
 ├── .gitignore
-├── main.ipynb
+├── grad_captum.ipynb
+├── pert_captum.ipynb
 ├── README.md
 ├── requirements.txt
 ├── requirements-cuda.txt
