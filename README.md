@@ -25,7 +25,7 @@ In the other Jupyter Notebook, `grad_captum.ipynb`, we created our own, feed-for
 ## QuickStart
 If you do not want to run this demo locally, you can also look at it on Google Colab:
 - [Perturbation-Based](https://colab.research.google.com/drive/1-T0mja-TGL2h_v4_bXKhyY_fYDd8JdEj?usp=sharing).
-- [Gradient-Based]   (not yet uploaded)
+- [Gradient-Based](https://colab.research.google.com/drive/15FW0gchI-lJXMoAkzyTSDnXneZ3yFNrD?usp=sharing)
 Otherwise, please follow the next steps:
 
 <!-- Fist we need to install [Git](#git) to be able to clone this repository.
